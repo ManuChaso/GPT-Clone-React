@@ -1,0 +1,14 @@
+.message{
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.user{
+    background-color: var(--background-light);
+    align-self: flex-end;
+}
+
+.system{
+    align-self: flex-start;
+}

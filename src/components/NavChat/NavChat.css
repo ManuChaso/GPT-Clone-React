@@ -1,0 +1,18 @@
+.nav-chat{
+    width: 90%;
+    height: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--background-color);
+    font-size: 15px;
+    filter: brightness(0.8);
+    transition: all 300ms;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-wrap: nowrap;
+}
+
+.nav-chat:hover{
+    filter: brightness(1);
+}

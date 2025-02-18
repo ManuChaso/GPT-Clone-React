@@ -1,0 +1,17 @@
+.chat-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 85%;
+    height: 100vh;
+}
+
+.chat{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+    height: 85vh;
+    padding-top: 50px;
+    /* background-color: rgb(55, 55, 148); */
+}
