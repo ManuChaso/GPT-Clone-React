@@ -10,5 +10,9 @@
 }
 
 .system{
+    display: flex;
+    /* flex-direction: column; */
     align-self: flex-start;
+    gap: 10px;
+    width: 90%;
 }

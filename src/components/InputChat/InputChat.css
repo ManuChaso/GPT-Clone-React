@@ -31,7 +31,7 @@
 }
 
 .input-chat input {
-    width: 100%;
+    width: calc(100% - 30px);
     height: 30px;
     background-color: transparent;
     border: none;

@@ -6,12 +6,12 @@ import wwwIco from '../../assets/icons/www.png';
 import bulbIco from '../../assets/icons/bulb.png';
 import waveIco from '../../assets/icons/wave.png';
 
-export default function InputChat({existChat, sendMessage}){
+export default function InputChat({existChat, sendMessage, loading}){
     const inputRef = useRef(null)
 
     const send = () => {
-        if(inputRef.current){
-            sendMessage(inputRef.current.value, 'system');
+        if(inputRef.current && inputRef.current.value && !loading){
+            sendMessage(inputRef.current.value, 'user');
             inputRef.current.value = '';
         }
     }
@@ -33,6 +33,6 @@ export default function InputChat({existChat, sendMessage}){
 
 function InputButton({text, ico, callback, className}){
     return (
-        <button className={className ? `input-button ${className}`: 'input-button' } onClick={callback}><img src={ico} alt="" />{text && text}</button>
+        <div className={className ? `input-button ${className}`: 'input-button' } onClick={callback}><img src={ico} alt="" />{text && text}</div>
     )
 }

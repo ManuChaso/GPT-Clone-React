@@ -2,16 +2,19 @@
     position: relative;
     display: flex;
     justify-content: center;
-    width: 85%;
+    width: 90%;
     height: 100vh;
 }
 
 .chat{
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    width: 50%;
-    height: 85vh;
+    align-items: center;
+    gap: 30px;
+    width: 70%;
+    height: 75vh;
     padding-top: 50px;
+    overflow-y: scroll;
+    list-style: none;
     /* background-color: rgb(55, 55, 148); */
 }

@@ -10,10 +10,19 @@
   background-color: var(--background-color);
 
   
+  ::-webkit-scrollbar{
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb{
+    background-color: var(--background-light);
+    border-radius: 3px;
+  }
+
 }
 
 *{
   margin: 0;
   padding: 0;
-  list-style: none;
+  /* list-style: none; */
 }
