@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import { useChat } from '../../context/chatContext';
 import './NavChat.css';
 
-export default function NavChat({chat}){
+export const NavChat = memo(({chat}) => {
     const {state, dispatch} = useChat();
 
     const deleteChat = () => {
@@ -17,6 +18,6 @@ export default function NavChat({chat}){
     }
 
     return (
-        <li onClick={selectChat} className='nav-chat'>{chat.name} <span onClick={deleteChat} className='delete-chat'>X</span></li>
+        <li onClick={selectChat} className={state.currentChat === chat.id ? 'nav-chat selected' : 'nav-chat'}>{chat.name} <span onClick={deleteChat} className='delete-chat'>X</span></li>
     )
-}
+});

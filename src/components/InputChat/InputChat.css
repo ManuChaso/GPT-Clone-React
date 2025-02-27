@@ -1,7 +1,8 @@
 .input-chat{
     position: absolute;
     width: 50%;
-    height: 100px;
+    min-height: 100px;
+    max-height: 300px;
     background-color: var(--background-light);
     border-radius: 15px;
 
@@ -30,9 +31,11 @@
     transform: translate(-50%, 0);
 }
 
-.input-chat input {
-    width: calc(100% - 30px);
-    height: 30px;
+.input-chat textarea {
+    min-width: calc(100% - 30px);;
+    max-width: calc(100% - 30px);
+    min-height: 30px;
+    max-height: 100px;
     background-color: transparent;
     border: none;
     outline: none;
@@ -40,6 +43,8 @@
 }
 
 .input-icons{
+    position: absolute;
+    bottom: 10px;
     display: flex;
     /* justify-content: center; */
     align-items: center;
@@ -73,4 +78,16 @@
     filter: brightness(1);
     position: absolute;
     right: 20px;
+}
+
+
+@media screen and (max-width: 800px) {
+    .input-chat{
+        position: absolute;
+        width: 90%;
+        height: 100px;
+        background-color: var(--background-light);
+        border-radius: 15px;
+    
+    }
 }

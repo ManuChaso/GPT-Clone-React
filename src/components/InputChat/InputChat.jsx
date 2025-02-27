@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './InputChat.css';
 
 import plusIco from '../../assets/icons/plus.png';
@@ -7,7 +7,27 @@ import bulbIco from '../../assets/icons/bulb.png';
 import waveIco from '../../assets/icons/wave.png';
 
 export default function InputChat({existChat, sendMessage, loading}){
-    const inputRef = useRef(null)
+    const inputRef = useRef(null);
+    const [shift, setShift] = useState(false)
+
+    // useEffect(() => {
+    //     if(inputRef.current){
+    //         console.log(inputRef.current.style.fontSize)
+    //         // inputRef.current.style.height = `${inputRef.current.scrollHeight}px`;
+    //     }
+    // }, [shift])
+
+    const handleKeyDown = (e) => {
+       if(e.key === 'Enter' && !shift){
+        send()
+        if(inputRef.current){
+            inputRef.current.style.height = `30px`;
+        }
+       }
+       if(e.key === 'Shift'){
+        setShift(true)
+       }
+    }
 
     const send = () => {
         if(inputRef.current && inputRef.current.value && !loading){
@@ -19,7 +39,8 @@ export default function InputChat({existChat, sendMessage, loading}){
     return(
         <div className={existChat ? 'input-chat active' : 'input-chat inactive'}>
             {!existChat && <h3 className='input-title'>¿En qué puedo ayudarte?</h3>}
-            <input onKeyDown={e => e.key === 'Enter' && send()} ref={inputRef} type="text" placeholder='Envía un mensaje...'/>
+            <textarea onKeyDown={handleKeyDown} onKeyUp={(e) => e.key === 'Shift' && setShift(false)} ref={inputRef} type="text" placeholder='Envía un mensaje...'>
+            </textarea>
             <div className='input-icons'>
                 <InputButton ico={plusIco}/>
                 <InputButton ico={wwwIco} text="Buscar"/>

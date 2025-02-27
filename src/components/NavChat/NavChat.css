@@ -8,7 +8,6 @@
     border-radius: 5px;
     background-color: var(--background-color);
     font-size: 15px;
-    filter: brightness(0.8);
     transition: all 300ms;
     cursor: pointer;
     text-overflow: ellipsis;
@@ -17,7 +16,7 @@
 }
 
 .nav-chat:hover{
-    filter: brightness(1);
+    background-color: var(--background-light);
 }
 
 .delete-chat{
@@ -33,4 +32,8 @@
 
 .delete-chat:hover{
     background-color: white;
+}
+
+.selected{
+    background-color: var(--background-light);
 }

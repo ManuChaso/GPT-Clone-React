@@ -9,7 +9,6 @@ export function ChatProvider({children}){
     const [state, dispatch] = useReducer(chatReducer, initialState);
 
     useEffect(() => {
-        // console.log(state)
         localStorage.setItem('chats-array', JSON.stringify(state.chatsArray))
         localStorage.setItem('chats', JSON.stringify(state.chats))
     }, [state])

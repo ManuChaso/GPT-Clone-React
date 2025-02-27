@@ -1,11 +1,13 @@
+import { useState } from 'react';
 import { useChat } from '../../context/chatContext';
-import NavChat from '../NavChat/NavChat';
+import {NavChat} from '../NavChat/NavChat';
 import './NavBar.css';
 
-
+import openIco from '../../assets/icons/open.png';
 
 export default function NavBar(){
     const {state, dispatch} = useChat();
+    const [navOpen, setNavOpen] = useState(true)
 
 
     const createChat = () => {
@@ -21,7 +23,7 @@ export default function NavBar(){
     }
 
     return(
-        <nav className='nav-bar'>
+        <nav className={navOpen ? 'nav-bar' : 'nav-bar hide'}>
             <button onClick={createChat} className='new-chat'>New Chat</button>
 
             <ul className='chats-container'>
@@ -29,6 +31,7 @@ export default function NavBar(){
                     <NavChat key={i} chat={{name: chat.name, id: chat.id}}/>
                 )}
             </ul>
+            <button onClick={() => setNavOpen(!navOpen)} className='open-nav'><img className={navOpen ? 'ico-open': 'ico-close'} src={openIco} alt="Open navBar menu"/></button>
         </nav>
     )
 }

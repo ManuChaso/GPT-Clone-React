@@ -1,3 +1,8 @@
+.message-loading{
+    width: calc(100% - 20px);
+    padding: 10px;
+}
+
 .loading-icon{
     width: 25px;
     height: 25px;
